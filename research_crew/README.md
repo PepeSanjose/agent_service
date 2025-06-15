@@ -39,6 +39,37 @@ This command initializes the research_crew Crew, assembling the agents and assig
 
 This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
 
+---
+
+## Despliegue de la API (FastAPI)
+
+Para exponer la funcionalidad de ResearchCrew como un servicio web, sigue estos pasos:
+
+1. **Activa tu entorno virtual** (si tienes uno):
+
+- En Windows:
+  ```bash
+  .venv\Scripts\activate
+  ```
+- En Unix/Mac:
+  ```bash
+  source .venv/bin/activate
+  ```
+
+2. **Lanza el servidor FastAPI con Uvicorn** desde la raíz del proyecto:
+
+```bash
+uvicorn research_crew.api:app --reload --app-dir src
+```
+
+Esto expondrá la API en [http://localhost:8000](http://localhost:8000).  
+Puedes acceder a la documentación interactiva (Swagger UI) en [http://localhost:8000/docs](http://localhost:8000/docs).
+
+El endpoint principal es:
+
+- `POST /run_crew`: Ejecuta el crew y devuelve el archivo `report.md` generado.
+
+---
 ## Understanding Your Crew
 
 The research_crew Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
