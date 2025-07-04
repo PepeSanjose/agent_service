@@ -13,12 +13,12 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
-def run():
+def run(topic):
     """
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs',
+        'topic': topic,
         'current_year': str(datetime.now().year)
     }
     
@@ -28,12 +28,12 @@ def run():
         raise Exception(f"An error occurred while running the crew: {e}")
 
 
-def train():
+def train(topic):
     """
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "topic": "AI LLMs",
+        "topic": topic,
         'current_year': str(datetime.now().year)
     }
     try:
@@ -52,12 +52,12 @@ def replay():
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
 
-def test():
+def test(topic):
     """
     Test the crew execution and returns the results.
     """
     inputs = {
-        "topic": "AI LLMs",
+        "topic": topic,
         "current_year": str(datetime.now().year)
     }
     

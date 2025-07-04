@@ -1,5 +1,26 @@
 # ResearchCrew Crew
 
+---
+
+⚠️ **IMPORTANTE: No incluyas el campo `agent` como string en los archivos YAML de tareas (`tasks.yaml`, `tasks_technical_doc.yaml`, etc.)**
+
+Si añades un campo `agent: nombre_agente` en el YAML de tareas, CrewAI intentará tratarlo como un objeto y lanzará errores como `'str' object has no attribute 'get'`.  
+**La asignación de agentes a tareas debe hacerse manualmente en el código Python, no en el YAML.**  
+Ejemplo correcto de tarea en YAML:
+```yaml
+mi_tarea:
+  description: >
+    Descripción de la tarea.
+  expected_output: >
+    Salida esperada.
+```
+Y en el código Python:
+```python
+tarea = Task(config=tasks_config['mi_tarea'])
+tarea.agent = mi_agente
+```
+---
+
 Welcome to the ResearchCrew Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
 
 ## Installation

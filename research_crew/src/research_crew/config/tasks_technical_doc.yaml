@@ -1,0 +1,17 @@
+code_search_task:
+  description: >
+    Busca ejemplos de código y referencias relevantes en GitHub relacionados con {topic}, que puedan servir de base o inspiración para el diseño técnico.
+  expected_output: >
+    Lista de repositorios, fragmentos de código y enlaces útiles encontrados en GitHub sobre {topic}.
+
+draft_doc_task:
+  description: >
+    Redacta un primer borrador de la documentación técnica sobre {topic}, cubriendo los aspectos clave, arquitectura, uso y ejemplos relevantes.
+  expected_output: >
+    Un borrador de documentación técnica en formato markdown, bien estructurado y comprensible.
+
+review_doc_task:
+  description: >
+    Revisa el borrador generado, corrige errores, mejora la claridad y añade recomendaciones para optimizar la documentación técnica.
+  expected_output: >
+    Una versión revisada y mejorada de la documentación técnica, lista para ser publicada.
